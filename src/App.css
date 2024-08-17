@@ -1,38 +1,171 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-image: url(/public/imperialPremiumBaseBolita.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+}
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: rgba(0, 0, 0, 0.7);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+p {
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra de texto para mejor legibilidad */
+}
+
+/* Ajustes para el contenido de las secciones */
+.home-content, .contact-content {
+  background-color: rgba(255, 255, 255, 0.7); /* Más transparente */
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+.home-content p, .contact-content p {
+  color: #333;
+  text-shadow: none;
+}
+
+/* Ajustes para los ítems del catálogo */
+.mate-item {
+  background: rgba(255, 255, 255, 0.8); /* Ligeramente más transparente */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 20px;
+  width: calc(33.33% - 20px); /* Para que haya 3 por fila */
+  max-width: 300px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.mate-name, .mate-price, .mate-description {
+  color: #333;
+  text-shadow: none;
+}
+
+.mate-price {
+  font-size: 1.25rem;
+  color: #007bff;
+  font-weight: bold;
+}
+.mate-description {
+  font-size: 1rem;
+  color: #555;
+}
+.mate-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: rgba(247, 233, 233, 0.7); /* Más transparente */
+  padding: 20px;
+  max-width: 1000px; /* Ajusta esto según tus necesidades */
+  margin: 20px auto;
+}
+
+.mate-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Header */
+.App-header {
+  background-color: rgba(0, 0, 0, 0.8); /* Semitransparente */
+  color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100px;
+}
+
+.header-container {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-logo {
+  border-radius: 50%; /* Esto hará que los bordes de la imagen sean circulares */
+  width: 100px; /* Ajusta el tamaño según sea necesario */
+  height: 100px; /* Asegúrate de que la altura sea la misma que el ancho */
+  object-fit: cover; /* Esto asegura que la imagen se recorte adecuadamente en un círculo */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Menú de navegación */
+.App-nav {
+  background-color: rgba(38, 55, 204, 0.8); /* Semitransparente */
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.nav-button.active {
+  border-bottom: 2px solid #007bff;
+  font-weight: bold;
+}
+
+/* Contenido de la consulta */
+.contact-content {
+  background-color: rgba(232, 245, 233, 0.8); /* Semitransparente */
+  padding: 20px;
+  text-align: left;
+}
+
+.contact-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-content p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.contact-link {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background-color: #25d366;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  background-color: #128c7e;
+}
+
+/* Footer */
+.App-footer {
+  background-color: rgba(51, 51, 51, 0.8); /* Semitransparente */
+  color: #ffffff;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1rem;
 }
