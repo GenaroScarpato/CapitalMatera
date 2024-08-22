@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Proyectos/static/css/main.1fd116a9.css",
+    "main.js": "/Proyectos/static/js/main.9c61503e.js",
+    "static/js/453.afcecf59.chunk.js": "/Proyectos/static/js/453.afcecf59.chunk.js",
+    "static/media/imperialPremiumBaseBolita.jpg": "/Proyectos/static/media/imperialPremiumBaseBolita.9de8d2e2dfc7bc47b2cf.jpg",
+    "static/media/slick.svg": "/Proyectos/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/Proyectos/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/Proyectos/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/Proyectos/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/Proyectos/index.html",
+    "main.1fd116a9.css.map": "/Proyectos/static/css/main.1fd116a9.css.map",
+    "main.9c61503e.js.map": "/Proyectos/static/js/main.9c61503e.js.map",
+    "453.afcecf59.chunk.js.map": "/Proyectos/static/js/453.afcecf59.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1fd116a9.css",
+    "static/js/main.9c61503e.js"
+  ]
+}
