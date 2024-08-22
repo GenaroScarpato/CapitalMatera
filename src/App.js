@@ -4,50 +4,50 @@ import './App.css';
 const mates = [
   {
     id: 1,
-    image: '/imperialVirolaAlpaca.jpg',
+    image: 'imperialVirolaAlpaca.jpg',
     name: 'Imperial Virola Alpaca',
     price: '$16000',
     description: 'Virola de alpaca, interior 100% calabaza y exterior de cerámica.',
   },
   {
     id: 2,
-    image: '/imperialBlanco.jpg',
+    image: 'imperialBlanco.jpg',
     name: 'Imperial premium',
     price: '$20000',
     description: 'Virola de alpaca, interior 100% calabaza y exterior de tela con puntitos.',
   },
   {
     id: 3,
-    image: '/imperialBaseBolitasNegro.jpg',
+    image: 'imperialBaseBolitasNegro.jpg',
     name: 'Imperial con base de bolitas',
     price: '$16000',
     description: 'Virola de alpaca, interior 100% calabaza y exterior de cerámica.',
   },
   {
     id: 4,
-    image: '/imperialPremiumBaseBolita.jpg',
+    image: 'imperialPremiumBaseBolita.jpg',
     name: 'Imperial Premium con base de bolitas',
     price: '$16000',
     description: 'Virola de alpaca, interior 100% calabaza y exterior de cerámica.',
   },
   {
     id: 5,
-    image: '/imperial.jpg',
+    image: 'imperial.jpg',
     name: 'Imperial negro',
     price: '$15000',
     description: 'Virola de alpaca, interior 100% calabaza y exterior de cuero.',
   },
   {
     id: 6,
-    image: '/camioneroVirolaAcero.jpg',
+    image: 'camioneroVirolaAcero.jpg',
     name: 'Camionero',
     price: '$22000',
     description: 'Virola de acero, interior 100% calabaza y exterior de cuero labrado.',
   },
   {
     id: 7,
-    image: '/algarrobo.jpg',
     name: 'Algarrobo',
+    image: 'algarrobo.jpg',
     price: '$18000',
     description: 'Virola de acero inoxidable, interior 100% calabaza.',
   },
@@ -55,13 +55,23 @@ const mates = [
 
 function App() {
   const [activeTab, setActiveTab] = useState('home');
+  const [selectedMate, setSelectedMate] = useState(null);
+
+  const handleMateClick = (mate) => {
+    setSelectedMate(mate);
+    setActiveTab('mateDetail');
+  };
+
+  const handleBackToCatalog = () => {
+    setSelectedMate(null);
+    setActiveTab('catalog');
+  };
 
   return (
     <div className="App">
       <header className="App-header">
         <div className="header-container">
-          <img src="/logo.png" alt="Logo Capital Matera" className="App-logo" />
-          
+          <img src="logo.png" alt="Logo Capital Matera" className="App-logo" />
           <h1>Capital Matera</h1>
         </div>
       </header>
@@ -91,11 +101,10 @@ function App() {
         {activeTab === 'catalog' && (
           <div className="mate-list">
             {mates.map((mate) => (
-              <div key={mate.id} className="mate-item">
+              <div key={mate.id} className="mate-item" onClick={() => handleMateClick(mate)}>
                 <img src={mate.image} alt={mate.name} className="mate-image" />
                 <h2 className="mate-name">{mate.name}</h2>
                 <p className="mate-price">{mate.price}</p>
-                <p className="mate-description">{mate.description}</p>
               </div>
             ))}
           </div>
@@ -141,6 +150,14 @@ function App() {
             >
               Hacer Consulta por WhatsApp
             </a>
+          </div>
+        )}
+        {activeTab === 'mateDetail' && selectedMate && (
+          <div className="mate-detail">
+            <h2 className="mate-name">{selectedMate.name}</h2>
+            <p className="mate-price">{selectedMate.price}</p>
+            <p className="mate-description">{selectedMate.description}</p>
+            <button className="back-button" onClick={handleBackToCatalog}>Volver al Catálogo</button>
           </div>
         )}
       </main>
