@@ -56,7 +56,11 @@ const mates = [
 function App() {
   const [activeTab, setActiveTab] = useState('home');
   const [selectedMate, setSelectedMate] = useState(null);
-
+  
+  const handleCloseDetail = () => {
+    // Lógica para cerrar el detalle del mate, como cambiar el estado activo
+    setActiveTab('catalog');
+  };
   const handleMateClick = (mate) => {
     setSelectedMate(mate);
     setActiveTab('mateDetail');
@@ -160,30 +164,26 @@ function App() {
             </a>
           </div>
         )}
-        {activeTab === 'mateDetail' && selectedMate && (
-          <div className="mate-detail">
-            <div className="mate-detail-container">
-              <img src={selectedMate.image} alt={selectedMate.name} className="mate-detail-image" />
-              <div className="mate-detail-info">
-                <h2 className="mate-name">{selectedMate.name}</h2>
-                <p className="mate-price">{selectedMate.price}</p>
-                <p className="mate-description">{selectedMate.description}</p>
-                <button 
-                  className="back-button" 
-                  onClick={handleBackToCatalog}
-                >
-                  Volver al Catálogo
-                </button>
-                <button
-                  className="want-button"
-                  onClick={() => sendWhatsAppMessage(selectedMate.name)}
-                >
-                  Lo quiero
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
+       {activeTab === 'mateDetail' && selectedMate && (
+  <div className="mate-detail">
+    <button className="close-button" onClick={handleCloseDetail} aria-label="Cerrar"></button>
+    <div className="mate-detail-container">
+      <img src={selectedMate.image} alt={selectedMate.name} className="mate-detail-image" />
+      <div className="mate-detail-info">
+        <h2 className="mate-name">{selectedMate.name}</h2>
+        <p className="mate-price">{selectedMate.price}</p>
+        <p className="mate-description">{selectedMate.description}</p>
+        <button
+          className="want-button"
+          onClick={() => sendWhatsAppMessage(selectedMate.name)}
+        >
+          Lo quiero
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
       </main>
 
       <footer className="App-footer">

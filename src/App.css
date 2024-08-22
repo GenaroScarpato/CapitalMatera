@@ -1,5 +1,5 @@
 /* Estilos generales */
-body{
+body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background-image: url(/public/imperialPremiumBaseBolita.jpg);
@@ -8,13 +8,14 @@ body{
   background-position: center;
   min-height: 100vh;
 }
+
 .App {
   text-align: center;
-  /*background-color: rgba(0, 0, 0, 0.7);*/
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
+
 main {
   flex-grow: 1;
   display: flex;
@@ -44,9 +45,7 @@ p {
 
 /* Ajustes para los ítems del catálogo */
 .mate-item {
- /* background: rgb(171, 171, 171); /* Ligeramente más transparente */
- background-color: rgba(51, 51, 51, 0.8); /* Semitransparente */
-
+  background-color: rgba(51, 51, 51, 0.8); /* Semitransparente */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 10px;
@@ -66,18 +65,18 @@ p {
 
 .mate-price {
   font-size: 1.25rem;
-  color: #ffffff;
   font-weight: bold;
 }
+
 .mate-description {
   font-size: 1rem;
-  color: #000000;
+  color: #fefefe;
 }
+
 .mate-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  /*background-color: rgba(89, 94, 93, 0.7); /* Más transparente */
   padding: 20px;
   max-width: 1000px; /* Ajusta esto según tus necesidades */
   margin: 20px auto;
@@ -92,8 +91,7 @@ p {
 .App-header {
   color: #ffffff;
   padding: 20px;
-  /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  */height: 100px;
+  height: 100px;
 }
 
 .header-container {
@@ -108,12 +106,10 @@ p {
   height: 100px; /* Asegúrate de que la altura sea la misma que el ancho */
   object-fit: cover; /* Esto asegura que la imagen se recorte adecuadamente en un círculo */
   margin-right: 20px; /* Agrega un espacio a la derecha del logo */
-
 }
 
 /* Menú de navegación */
 .App-nav {
-  /*background-color: darkblue; /* Semitransparente */
   padding: 10px;
   display: flex;
   justify-content: center;
@@ -174,24 +170,54 @@ p {
   text-align: center;
   font-size: 1rem;
 }
-/* Estilos generales */
-/* ... tus estilos actuales aquí ... */
 
-/* Media Queries */
 
-/* Estilos para pantallas de tamaño medio (tabletas) */
-@media (max-width: 768px) {
-  .mate-item {
-    width: calc(50% - 20px); /* Para que haya 2 por fila */
-  }
-
-  .App-logo {
-    width: 80px; /* Ajusta el tamaño según sea necesario */
-    height: 80px;
-  }
+/* Estilos para el botón de cerrar */
+.close-button {
+  position: absolute; /* Posiciona el botón de forma absoluta dentro del contenedor */
+  top: 10px; /* Espacio desde el borde superior del contenedor */
+  right: 10px; /* Espacio desde el borde derecho del contenedor */
+  width: 30px; /* Tamaño del botón */
+  height: 30px; /* Tamaño del botón */
+  background: transparent; /* Fondo transparente para la cruz */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cursor de puntero */
 }
+
+.close-button::before, .close-button::after {
+  content: ""; /* Sin contenido */
+  position: absolute; /* Posición absoluta dentro del botón */
+  top: 50%; /* Centrado verticalmente */
+  left: 50%; /* Centrado horizontalmente */
+  width: 20px; /* Ancho de las líneas de la cruz */
+  height: 2px; /* Grosor de las líneas de la cruz */
+  background: #ffffff; /* Color de las líneas de la cruz */
+  transform: translate(-50%, -50%) rotate(45deg); /* Rotar la primera línea */
+}
+
+.close-button::after {
+  transform: translate(-50%, -50%) rotate(-45deg); /* Rotar la segunda línea en dirección opuesta */
+}
+
+/* Estilos para el botón "Lo quiero" */
+.want-button {
+  padding: 10px 20px; /* Espaciado interno del botón */
+  background-color: #4ad36a; /* Color de fondo verde */
+  color: white; /* Color del texto del botón */
+  border: none; /* Quitar borde del botón */
+  border-radius: 5px; /* Bordes redondeados del botón */
+  cursor: pointer; /* Cursor de puntero para el botón */
+  font-size: 1rem; /* Tamaño de fuente */
+  margin-top: 10px; /* Espacio superior del botón */
+  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+.want-button:hover {
+  background-color: #218838; /* Color de fondo del botón al pasar el ratón */
+}
+
 .mate-detail {
-  background-color: rgba(232, 4, 4, 0.8); /* Fondo semitransparente con opacidad del 80% */
+  background-color: rgba(200, 123, 123, 0.8); /* Fondo semitransparente con opacidad del 80% */
   border: 1px solid #ddd; /* Borde delgado */
   border-radius: 10px; /* Bordes redondeados */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
@@ -200,7 +226,7 @@ p {
   margin: 20px auto; /* Centrar y agregar margen */
   text-align: center; /* Centrar texto */
   display: flex; /* Flexbox para alinear elementos */
-  align-items: center; /* Alinear verticalmente */
+  flex-direction: column; /* Apilar elementos verticalmente */
   gap: 20px; /* Espacio entre imagen e info */
   position: relative; /* Necesario para el posicionamiento absoluto del botón */
 }
@@ -227,51 +253,10 @@ p {
   max-width: 400px; /* Ajustar el ancho máximo del contenedor de información */
 }
 
-/* Estilos para el botón de volver */
-.back-button {
-  position: fixed; /* Posiciona el botón de forma fija */
-  bottom: 20px; /* Espacio desde el borde inferior */
-  right: 20px; /* Espacio desde el borde derecho */
-  padding: 10px 20px; /* Espaciado interno del botón */
-  background-color: #007bff; /* Color de fondo del botón */
-  color: white; /* Color del texto del botón */
-  border: none; /* Quitar borde del botón */
-  border-radius: 5px; /* Bordes redondeados del botón */
-  cursor: pointer; /* Cursor de puntero para el botón */
-}
-
-.back-button:hover {
-  background-color: #0056b3; /* Color de fondo del botón al pasar el ratón */
-}
-
-/* Estilos para el botón "Lo quiero" */
-.want-button {
-  padding: 10px 20px; /* Espaciado interno del botón */
-  background-color: #28a745; /* Color de fondo verde */
-  color: white; /* Color del texto del botón */
-  border: none; /* Quitar borde del botón */
-  border-radius: 5px; /* Bordes redondeados del botón */
-  cursor: pointer; /* Cursor de puntero para el botón */
-  font-size: 1rem; /* Tamaño de fuente */
-  margin-top: 10px; /* Espacio superior del botón */
-  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
-}
-
-.want-button:hover {
-  background-color: #218838; /* Color de fondo del botón al pasar el ratón */
-}
-
-.mate-detail .mate-price {
-  font-size: 1.6em; /* Tamaño de fuente mayor */
-  color: #ff6600; /* Color del texto específico */
-  margin-bottom: 20px; /* Margen inferior */
-  font-weight: bold; /* Negrita */
-}
-
 /* Estilos para pantallas pequeñas (móviles) */
 @media (max-width: 480px) {
   .mate-item {
-    width: calc(50% - 20px); /* Para que haya 2 por fila */
+    width: calc(50% - 10px); /* Para que haya 2 por fila y ajustar margen */
     margin: 5px; /* Reducir margen para pantallas pequeñas */
   }
 
@@ -284,11 +269,11 @@ p {
 /* Estilos para pantallas de tamaño medio (tabletas) */
 @media (max-width: 768px) {
   .mate-item {
-    width: calc(50% - 20px); /* Para que haya 2 por fila */
+    width: calc(33.33% - 10px); /* Para que haya 3 por fila y ajustar margen */
   }
 
-  .App-logo {
-    width: 80px; /* Ajusta el tamaño según sea necesario */
-    height: 80px;
+  .mate-detail-container {
+    flex-direction: column; /* Apilar imagen y detalles verticalmente en pantallas más pequeñas */
+    align-items: center; /* Centrar el contenido */
   }
 }
