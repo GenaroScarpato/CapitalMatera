@@ -67,6 +67,14 @@ function App() {
     setActiveTab('catalog');
   };
 
+  const sendWhatsAppMessage = (mateName) => {
+    const phoneNumber = '2254535060'; // Reemplaza con tu número de WhatsApp
+    const message = `Quiero ${mateName}`;
+    const encodedMessage = encodeURIComponent(message);
+    const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(url, '_blank');
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -154,10 +162,26 @@ function App() {
         )}
         {activeTab === 'mateDetail' && selectedMate && (
           <div className="mate-detail">
-            <h2 className="mate-name">{selectedMate.name}</h2>
-            <p className="mate-price">{selectedMate.price}</p>
-            <p className="mate-description">{selectedMate.description}</p>
-            <button className="back-button" onClick={handleBackToCatalog}>Volver al Catálogo</button>
+            <div className="mate-detail-container">
+              <img src={selectedMate.image} alt={selectedMate.name} className="mate-detail-image" />
+              <div className="mate-detail-info">
+                <h2 className="mate-name">{selectedMate.name}</h2>
+                <p className="mate-price">{selectedMate.price}</p>
+                <p className="mate-description">{selectedMate.description}</p>
+                <button 
+                  className="back-button" 
+                  onClick={handleBackToCatalog}
+                >
+                  Volver al Catálogo
+                </button>
+                <button
+                  className="want-button"
+                  onClick={() => sendWhatsAppMessage(selectedMate.name)}
+                >
+                  Lo quiero
+                </button>
+              </div>
+            </div>
           </div>
         )}
       </main>

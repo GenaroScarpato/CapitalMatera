@@ -191,15 +191,76 @@ p {
   }
 }
 .mate-detail {
-  background-color: #e80404; /* Fondo suave */
+  background-color: rgba(232, 4, 4, 0.8); /* Fondo semitransparente con opacidad del 80% */
   border: 1px solid #ddd; /* Borde delgado */
   border-radius: 10px; /* Bordes redondeados */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
   padding: 20px; /* Espaciado interno */
-  max-width: 400px; /* Ancho máximo de la caja */
+  max-width: 800px; /* Ancho máximo de la caja */
   margin: 20px auto; /* Centrar y agregar margen */
   text-align: center; /* Centrar texto */
+  display: flex; /* Flexbox para alinear elementos */
+  align-items: center; /* Alinear verticalmente */
+  gap: 20px; /* Espacio entre imagen e info */
+  position: relative; /* Necesario para el posicionamiento absoluto del botón */
 }
+
+.mate-detail .back-button {
+  position: absolute; /* Posiciona el botón de forma absoluta dentro del contenedor */
+  bottom: 20px; /* Espacio desde el borde inferior del contenedor */
+  right: 20px; /* Espacio desde el borde derecho del contenedor */
+}
+
+.mate-detail-container {
+  display: flex; /* Flexbox para alinear la imagen y la info */
+  gap: 20px; /* Espacio entre imagen y detalles */
+}
+
+.mate-detail-image {
+  max-width: 300px; /* Ajustar el ancho máximo de la imagen */
+  border-radius: 10px; /* Bordes redondeados para la imagen */
+  object-fit: cover; /* Mantener la proporción y cubrir el área */
+}
+
+.mate-detail-info {
+  text-align: left; /* Alinear el texto a la izquierda */
+  max-width: 400px; /* Ajustar el ancho máximo del contenedor de información */
+}
+
+/* Estilos para el botón de volver */
+.back-button {
+  position: fixed; /* Posiciona el botón de forma fija */
+  bottom: 20px; /* Espacio desde el borde inferior */
+  right: 20px; /* Espacio desde el borde derecho */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  background-color: #007bff; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  border: none; /* Quitar borde del botón */
+  border-radius: 5px; /* Bordes redondeados del botón */
+  cursor: pointer; /* Cursor de puntero para el botón */
+}
+
+.back-button:hover {
+  background-color: #0056b3; /* Color de fondo del botón al pasar el ratón */
+}
+
+/* Estilos para el botón "Lo quiero" */
+.want-button {
+  padding: 10px 20px; /* Espaciado interno del botón */
+  background-color: #28a745; /* Color de fondo verde */
+  color: white; /* Color del texto del botón */
+  border: none; /* Quitar borde del botón */
+  border-radius: 5px; /* Bordes redondeados del botón */
+  cursor: pointer; /* Cursor de puntero para el botón */
+  font-size: 1rem; /* Tamaño de fuente */
+  margin-top: 10px; /* Espacio superior del botón */
+  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+.want-button:hover {
+  background-color: #218838; /* Color de fondo del botón al pasar el ratón */
+}
+
 .mate-detail .mate-price {
   font-size: 1.6em; /* Tamaño de fuente mayor */
   color: #ff6600; /* Color del texto específico */
@@ -217,5 +278,17 @@ p {
   .App-logo {
     width: 60px; /* Ajusta el tamaño según sea necesario */
     height: 60px;
+  }
+}
+
+/* Estilos para pantallas de tamaño medio (tabletas) */
+@media (max-width: 768px) {
+  .mate-item {
+    width: calc(50% - 20px); /* Para que haya 2 por fila */
+  }
+
+  .App-logo {
+    width: 80px; /* Ajusta el tamaño según sea necesario */
+    height: 80px;
   }
 }
