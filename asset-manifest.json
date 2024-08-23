@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/CapitalMatera/static/css/main.45286d5a.css",
-    "main.js": "/CapitalMatera/static/js/main.9255d554.js",
+    "main.css": "/CapitalMatera/static/css/main.4602ddb2.css",
+    "main.js": "/CapitalMatera/static/js/main.34e0655b.js",
     "static/js/453.afcecf59.chunk.js": "/CapitalMatera/static/js/453.afcecf59.chunk.js",
     "static/media/imperialPremiumBaseBolita.jpg": "/CapitalMatera/static/media/imperialPremiumBaseBolita.9de8d2e2dfc7bc47b2cf.jpg",
     "static/media/slick.svg": "/CapitalMatera/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -9,12 +9,12 @@
     "static/media/slick.ttf": "/CapitalMatera/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/CapitalMatera/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/CapitalMatera/index.html",
-    "main.45286d5a.css.map": "/CapitalMatera/static/css/main.45286d5a.css.map",
-    "main.9255d554.js.map": "/CapitalMatera/static/js/main.9255d554.js.map",
+    "main.4602ddb2.css.map": "/CapitalMatera/static/css/main.4602ddb2.css.map",
+    "main.34e0655b.js.map": "/CapitalMatera/static/js/main.34e0655b.js.map",
     "453.afcecf59.chunk.js.map": "/CapitalMatera/static/js/453.afcecf59.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.45286d5a.css",
-    "static/js/main.9255d554.js"
+    "static/css/main.4602ddb2.css",
+    "static/js/main.34e0655b.js"
   ]
 }
